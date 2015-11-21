@@ -40,6 +40,7 @@ GEM
     autoprefixer-rails (6.1.0.1)
       execjs
       json
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5.1)
@@ -59,6 +60,7 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    http_accept_language (2.0.5)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -143,9 +145,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  http_accept_language
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.4)
