@@ -105,3 +105,12 @@ input {
     color: $state-danger-text;
   }
 }
+
+/* 
+生年月日の年月日の入力ボックスを縦に並べず横に並べたかったが、
+この設定では横に並ばない
+.bootstrap-date {
+  display: inline-block;
+  width: auto;
+}
+*/

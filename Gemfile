@@ -50,3 +50,6 @@ end
 # To localize from HTTP request header
 gem 'http_accept_language'
 
+
+gem 'pry-byebug', group: :development
+
