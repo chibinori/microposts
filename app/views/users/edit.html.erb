@@ -1,34 +1,61 @@
 <h1>Edit User Profile</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+  <div class="col-md-8 col-md-offset-2">
+    
+    <%= form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
     
       <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Password Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.label :biography %>
-      <%= f.text_field :biography %>
-
-      <%= f.label :location %>
-      <%= f.text_field :location %>
-      
-      <%= f.label :birthday %>
-      <%= f.date_select :birthday, start_year: 1900, include_blank: true %>
-
-      <%= f.submit "Edit my profile", class: "btn btn-large btn-primary" %>
+    
+      <div class="form-group">
+        <%= f.label :name, {class: "col-md-2 control-label"} %>
+        <div class="col-md-6">
+          <%= f.text_field :name, {class: "form-control"} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, {class: "col-md-2 control-label"} %>
+        <div class="col-md-6">
+          <%= f.text_field :email %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, {class: "col-md-2 control-label"} %>
+        <div class="col-md-6">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation, "Password Confirmation", {class: "col-md-2 control-label"} %>
+        <div class="col-md-6">
+          <%= f.password_field :password_confirmation %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :biography, {class: "col-md-2 control-label"} %>
+        <div class="col-md-10">
+          <%= f.text_field :biography %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :location, {class: "col-md-2 control-label"} %>
+        <div class="col-md-10">
+          <%= f.text_field :location %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :birthday, {class: "col-md-2 control-label"} %>
+        <div class="col-md-10">
+          <%= f.date_select :birthday, start_year: 1900, include_blank: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2 col-md-offset-2">
+          <%= f.submit class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
     <% end %>
+    </div>
   </div>
-  <p></p>
 </div>
+<p></p>

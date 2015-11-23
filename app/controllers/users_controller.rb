@@ -2,7 +2,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
   
   def show
-   @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    
+    if @user != current_user
+      # ログイン中のユーザではないユーザ情報を表示しようとしているので
+      # ホーム画面へリダイレクト
+      flash[:danger] = "Invalid operation detected!"
+      redirect_to root_url
+    end
   end
   
   def new
@@ -12,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
@@ -20,10 +28,24 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user != current_user
+      # ログイン中のユーザではないユーザ情報を編集しようとしているので
+      # ホーム画面へリダイレクト
+      flash[:danger] = "Invalid operation detected!"
+      redirect_to root_url
+    end
   end
   
   def update
     #binding.pry
+    
+    if @user != current_user
+      # ログイン中のユーザではないユーザ情報を行進しようとしているので
+      # ホーム画面へリダイレクト
+      flash[:danger] = "Invalid operation detected!"
+      redirect_to root_url
+    end
+    
     # 更新時のhas_secure_passwordは、
     # フォームから入力されたパスワードが空でも、エラーにならず、
     # DBのパスワードダイジェスト情報が空になることはない
