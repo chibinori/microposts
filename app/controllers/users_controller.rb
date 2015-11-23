@@ -10,6 +10,8 @@ class UsersController < ApplicationController
       flash[:danger] = "Invalid operation detected!"
       redirect_to root_url
     end
+    
+    @microposts = @user.microposts
   end
   
   def new
