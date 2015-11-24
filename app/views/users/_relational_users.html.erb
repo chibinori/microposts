@@ -1,0 +1,16 @@
+<div class="relational_users">
+  <% #ユーザは３人ごとに横に並べる %>
+  <div class="row">
+  <% column_num = 3 %>
+    <% @relational_users.each_with_index do |relational_user, i| %>
+      <% #あるユーザの情報を記述する %>
+      <%= render partial: 'relational_user',
+        locals: { relational_user: relational_user } %>
+      
+      <% if i % column_num + 1 == column_num %>
+        </div>
+        <div class="row">
+      <% end %>
+    <% end %>
+  </div>
+</div>

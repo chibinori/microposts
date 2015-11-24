@@ -1,0 +1,26 @@
+<div id="relational_user-<%= relational_user.id %>" class="col-md-4">
+  <div class="media">
+    <%= link_to gravatar_for(relational_user, size: 50), relational_user, class: "media-left" %>
+  	<div class="media-body">
+      <span class="user"><%= link_to relational_user.name, relational_user %></span>
+      <% #他人のフォロー・フォロワー一覧は自分が含まれていることがあるため排除する %>
+      <% if relational_user != current_user %>
+        <div id="<%= "follow_form" + relational_user.id.to_s %>">
+          <% if current_user.following?(relational_user) %>
+            <%= render partial: 'unfollow', locals: { unfollow_user: relational_user } %>
+          <% else %>
+            <%= render partial: 'follow', locals: { follow_user: relational_user } %>
+          <% end %>
+        </div>
+  	  <% end %>
+  	</div>
+  </div>
+</div>
+
+<!--
+BootStrap の media を使わないと、画面が小さい時に綺麗に縦に並べる方法が難しかった。
+<div id="relational_user-<%#= relational_user.id %>" class="col-md-4 ">
+  <%#= link_to gravatar_for(relational_user, size: 50), relational_user %>
+  <span class="user"><#%= link_to relational_user.name, relational_user %></span>
+</div>
+-->
