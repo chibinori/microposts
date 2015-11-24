@@ -2,7 +2,7 @@
   <% #ユーザは３人ごとに横に並べる %>
   <div class="row">
   <% column_num = 3 %>
-    <% @relational_users.each_with_index do |relational_user, i| %>
+    <% relational_users.each_with_index do |relational_user, i| %>
       <% #あるユーザの情報を記述する %>
       <%= render partial: 'relational_user',
         locals: { relational_user: relational_user } %>

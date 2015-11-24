@@ -11,9 +11,10 @@
   </aside>
   <% if logged_in? %>
     <div class="col-md-8">
-      <h3>Followed Users (<%= @relational_users.count %>)</h3>
-      <% if @relational_users.any? %>
-        <%= render 'relational_users' %>
+      <h3>Followed Users (<%= @followed_users.count %>)</h3>
+      <% if @followed_users.any? %>
+        <%= render partial: 'relational_users',
+          locals: { relational_users: @followed_users } %>
       <% end %>
     </div>
   <% end %>
