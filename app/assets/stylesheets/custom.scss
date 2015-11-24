@@ -202,15 +202,8 @@ span.picture {
 /* relational_users */
 
 .relational_users {
-  padding: 0;
-
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .gravatar {
-    float: left;
-    margin-top: 5px;
+  .follow-unfollow-button {
+    width: 90px;
   }
 }
 
