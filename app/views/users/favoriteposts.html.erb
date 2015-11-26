@@ -15,9 +15,13 @@
     <div class="col-md-8">
       <h3>Favorite Microposts (<%= @microposts.count %>)</h3>
       <% if @microposts.any? %>
+        <% #ページネーション開始 %>
+        <%= page_entries_info @microposts %>
         <ol class="microposts">
           <%= render @microposts %>
         </ol>
+        <%= paginate @microposts %>
+        <% #ページネーション終了 %>
       <% end %>
     </div>
   <% end %>

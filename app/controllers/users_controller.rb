@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts
+    @microposts = @user.microposts.order(created_at: :desc).page(params[:page])
   end
   
   def new
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
   
   def favoriteposts
     @user = User.find(params[:id])
-    @microposts = @user.favoriteposts
+    @microposts = @user.favoriteposts.order(created_at: :desc).page(params[:page])
   end
   
   private

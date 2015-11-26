@@ -1,5 +1,9 @@
 <% if @feed_items.any? %>
+  <% #ページネーション開始 %>
+  <%= page_entries_info @feed_items %>
   <ol class="microposts">
     <%= render @feed_items %>
   </ol>
+  <%= paginate @feed_items %>
+  <% #ページネーション終了 %>
 <% end %>
