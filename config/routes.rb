@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :microposts
   resources :relationships, only: [:create, :destroy]
   resources :favoritepost_relationships, only: [:create, :destroy]
+  resources :repost_relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

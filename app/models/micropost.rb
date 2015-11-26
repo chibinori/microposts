@@ -3,5 +3,18 @@ class Micropost < ActiveRecord::Base
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   
-  has_many :favoritepost_relationships , foreign_key: "micropost_id", dependent: :destroy
+  has_many :favoritepost_relationships , class_name:  "FavoritepostRelationship",
+                                          foreign_key: "micropost_id",
+                                          dependent: :destroy
+  
+  has_one :reposting_relationship, class_name:  "RepostRelationship",
+                                     foreign_key: "reposting_id",
+                                     dependent:   :destroy
+  has_one :reposting_post, through: :reposting_relationship, source: :reposted
+  
+  has_many :reposted_relationships, class_name:  "RepostRelationship",
+                                    foreign_key: "reposted_id",
+                                    dependent:   :destroy
+  has_many :reposted_posts, through: :reposted_relationships, source: :reposting
+  
 end

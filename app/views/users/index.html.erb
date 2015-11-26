@@ -6,10 +6,18 @@
         class: "btn btn-link btn-lg"%>
       <%= link_to "Followed Users", followers_user_path(@user),
         class: "btn btn-link btn-lg"%>
-      <button type="button" class="btn btn-info btn-lg active">
-        All Users
-      </button>
+      <%= link_to "Favorite Posts", favoriteposts_user_path(@user),
+        class: "btn btn-link btn-lg"%>
     </div>
+    
+    <% #テスト用機能 %>
+    <% if @user == current_user %>
+      <div>
+        <p></p><p></p><p></p>
+        <%= link_to "All Users", users_path,
+          class: "btn btn-link btn-lg"%>
+      </div>
+    <% end %>
   </aside>
   <% if logged_in? %>
     <div class="col-md-8">

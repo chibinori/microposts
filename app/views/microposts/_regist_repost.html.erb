@@ -1,0 +1,10 @@
+<%= form_for(base_post.reposted_relationships.build) do |f| %>
+  <div>
+    <%= hidden_field_tag :base_post_id, base_post.id %>
+
+    <% #javascriptで動的にフォームを切り替える場所を指定するため %>
+    <% #Ajaxでリツイート処理は行わないのでコメントアウト %>
+    <%#= hidden_field_tag :displayed_post_id, displayed_post.id %> 
+  </div>
+  <%= f.submit "Repost", class: "btn btn-primary" %>
+<% end %>

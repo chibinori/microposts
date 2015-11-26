@@ -1,0 +1,4 @@
+<% #リツイートはAjaxで行わないのでこのファイルは未使用 %>
+$("<%= escape_javascript("#repost-" + @displayed_post.id.to_s) %>")
+  .html("<%= escape_javascript(render partial: 'microposts/regist_repost',
+    locals: { base_post: @base_post, displayed_post: @displayed_post }) %>");

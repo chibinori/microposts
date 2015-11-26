@@ -1,4 +1,4 @@
 class FavoritepostRelationship < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :micropost
+  belongs_to :user, class_name: "User"
+  belongs_to :micropost, class_name: "Micropost"
 end

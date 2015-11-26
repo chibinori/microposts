@@ -43,9 +43,11 @@ class User < ActiveRecord::Base
   end
   
   #
-  # お気に入り機能で使用する機能
+  # お気に入り機能で使用する
   #
-  has_many :favoritepost_relationships , foreign_key: "user_id", dependent: :destroy
+  has_many :favoritepost_relationships , class_name:  "FavoritepostRelationship",
+                                        foreign_key: "user_id",
+                                        dependent: :destroy
   has_many :favoriteposts, through: :favoritepost_relationships, source: :micropost
   # あるツイートをお気に入りにする
   def regist_favoritepost(micropost)
@@ -62,5 +64,24 @@ class User < ActiveRecord::Base
   def is_favoritepost?(micropost)
     favoriteposts.include?(micropost)
   end
+  
+  #
+  # リツイート機能で使用する
+  #
+  # このユーザが指定されたツイートをリツイートした時の関連を取得する
+  def get_repost_relationship(micropost)
+    if !micropost.reposted_posts.any?
+      return nil
+    end
+    
+    posting = micropost.reposted_posts.find_by(user_id: self.id)
+    
+    if posting == nil
+      return nil
+    end
+    
+    return posting.reposting_relationship
+  end
+  
 
 end
