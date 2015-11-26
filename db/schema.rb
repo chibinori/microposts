@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126032436) do
+ActiveRecord::Schema.define(version: 20151126162257) do
 
   create_table "favariteposts", force: :cascade do |t|
     t.integer  "user_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20151126032436) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "postimage"
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"

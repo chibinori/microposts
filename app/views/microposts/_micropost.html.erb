@@ -3,7 +3,7 @@
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
     <% base_post = micropost.reposting_post %>
-    <% if base_post == nil %>
+    <% if base_post.blank? %>
       <%= micropost.content %>
     <% else %>
       <%= link_to "@" + base_post.user.name, base_post.user %>: <%= base_post.content %>
@@ -16,6 +16,14 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+
+  <% #画像の表示方法は通常のツイートでもリツイートでも関係無い %>
+  <% base_post ||= micropost %>
+  <% if base_post.postimage.present? %>
+    <div class="row">
+      <%= image_tag base_post.postimage.url %>
+    </div>
+  <% end %>
   <div class="row">
     <div class="favorite col-sm-4" id="favoritepost-<%= micropost.id %>">
       <% if current_user.is_favoritepost?(micropost) %>
@@ -25,16 +33,16 @@
       <% end %>
     </div>
     
+    <% #以下リツイートに関する表示 %>
     <% #リツイートのリツイートはできない。 %>
     <% #リツイートをリツイートする操作は元のツイートをログイン中のユーザがリツイートすることになる %>
-    <% base_post ||= micropost %>
   
     <% #自分のツイートはリツイートできない %>
     <% if current_user != base_post.user && current_user != micropost.user %>
       <div class="repost col-sm-4" id="repost-<%= micropost.id %>">
         <% #このツイートを自分がリツイートした関連を取得する. %>
         <% repost_relationship = current_user.get_repost_relationship(base_post) %>
-        <% if repost_relationship != nil %>
+        <% if repost_relationship.present? %>
           <% #既にリツイートしている場合 %>
           <%= render partial: 'microposts/release_repost',
             locals: { destroy_repost_relationship: repost_relationship,

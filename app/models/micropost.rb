@@ -3,6 +3,8 @@ class Micropost < ActiveRecord::Base
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   
+  mount_uploader :postimage, PostImageUploader
+  
   has_many :favoritepost_relationships , class_name:  "FavoritepostRelationship",
                                           foreign_key: "micropost_id",
                                           dependent: :destroy

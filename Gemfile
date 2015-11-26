@@ -57,5 +57,11 @@ gem 'http_accept_language'
 # To pagenate posts
 gem 'kaminari'
 
+# To update image
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'rmagick'
+
+
 gem 'pry-byebug', group: :development
 

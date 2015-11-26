@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
     
     posting = micropost.reposted_posts.find_by(user_id: self.id)
     
-    if posting == nil
+    if posting.blank?
       return nil
     end
     
