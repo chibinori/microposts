@@ -1,0 +1,2 @@
+$("<%= escape_javascript("#favoritepost-" + @micropost.id.to_s) %>")
+  .html("<%= escape_javascript(render partial: 'microposts/regist_favorite', locals: { regist_favorite: @micropost }) %>");

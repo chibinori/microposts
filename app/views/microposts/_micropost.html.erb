@@ -9,4 +9,11 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <div class="favorite" id="favoritepost-<%= micropost.id %>">
+    <% if current_user.is_favoritepost?(micropost) %>
+      <%= render partial: 'microposts/release_favorite', locals: { release_favorite: micropost } %>
+    <% else %>
+      <%= render partial: 'microposts/regist_favorite', locals: { regist_favorite: micropost } %>
+    <% end %>
+  </div>
 </li>

@@ -6,7 +6,11 @@
         class: "btn btn-link btn-lg"%>
       <%= link_to "Followed Users", followers_user_path(@user),
         class: "btn btn-link btn-lg"%>
+      <%= link_to "Favorite Posts", favoriteposts_user_path(@user),
+        class: "btn btn-link btn-lg"%>
     </div>
+    <%= link_to "All Users", users_path,
+      class: "btn btn-link btn-lg"%>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

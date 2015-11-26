@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
   
+  def index
+    # Userを全て取得する。
+    @users = User.all
+    @user = current_user
+  end
+
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts
@@ -61,6 +67,11 @@ class UsersController < ApplicationController
   def followers
     @user = User.find(params[:id])
     @followed_users = @user.follower_users
+  end
+  
+  def favoriteposts
+    @user = User.find(params[:id])
+    @microposts = @user.favoriteposts
   end
   
   private

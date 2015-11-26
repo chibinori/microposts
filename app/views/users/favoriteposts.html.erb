@@ -4,19 +4,20 @@
     <div class="btn-group-vertical" role="group">
       <%= link_to "Following Users", followings_user_path(@user),
         class: "btn btn-link btn-lg"%>
-      <button type="button" class="btn btn-info btn-lg active">
-        Followed Users
-      </button>
-      <%= link_to "Favorite Posts", favoriteposts_user_path(@user),
+      <%= link_to "Followed Users", followers_user_path(@user),
         class: "btn btn-link btn-lg"%>
+      <button type="button" class="btn btn-info btn-lg active">
+        Favorite Posts
+      </button>
     </div>
   </aside>
   <% if logged_in? %>
     <div class="col-md-8">
-      <h3>Followed Users (<%= @followed_users.count %>)</h3>
-      <% if @followed_users.any? %>
-        <%= render partial: 'relational_users',
-          locals: { relational_users: @followed_users } %>
+      <h3>Favorite Microposts (<%= @microposts.count %>)</h3>
+      <% if @microposts.any? %>
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
       <% end %>
     </div>
   <% end %>

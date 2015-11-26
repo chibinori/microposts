@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123122312) do
+ActiveRecord::Schema.define(version: 20151125085153) do
+
+  create_table "favariteposts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "favariteposts", ["micropost_id"], name: "index_favariteposts_on_micropost_id"
+  add_index "favariteposts", ["user_id", "micropost_id"], name: "index_favariteposts_on_user_id_and_micropost_id", unique: true
+  add_index "favariteposts", ["user_id"], name: "index_favariteposts_on_user_id"
+
+  create_table "favoritepost_relationships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "favoritepost_relationships", ["micropost_id"], name: "index_favoritepost_relationships_on_micropost_id"
+  add_index "favoritepost_relationships", ["user_id", "micropost_id"], name: "index_favoritepost_relationships_on_user_id_and_micropost_id", unique: true
+  add_index "favoritepost_relationships", ["user_id"], name: "index_favoritepost_relationships_on_user_id"
+
+  create_table "favoriteposts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "favoriteposts", ["micropost_id"], name: "index_favoriteposts_on_micropost_id"
+  add_index "favoriteposts", ["user_id", "micropost_id"], name: "index_favoriteposts_on_user_id_and_micropost_id", unique: true
+  add_index "favoriteposts", ["user_id"], name: "index_favoriteposts_on_user_id"
 
   create_table "microposts", force: :cascade do |t|
     t.integer  "user_id"

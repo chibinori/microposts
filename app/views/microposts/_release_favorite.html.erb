@@ -1,0 +1,5 @@
+<%= form_for(current_user.favoritepost_relationships.find_by(micropost_id: release_favorite.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "Release Favorite", class: "btn" %>
+<% end %>

@@ -7,6 +7,8 @@
       </button>
       <%= link_to "Followed Users", followers_user_path(@user),
         class: "btn btn-link btn-lg"%>
+      <%= link_to "Favorite Posts", favoriteposts_user_path(@user),
+        class: "btn btn-link btn-lg"%>
     </div>
   </aside>
   <% if logged_in? %>
