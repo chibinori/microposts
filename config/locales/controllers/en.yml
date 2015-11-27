@@ -1,0 +1,18 @@
+---
+en:
+  users:
+    create_success: "Welcome to the Microposts"
+    edit_success: "Success to edit profile!"
+
+  microposts:
+    create_success: "Micropost created!"
+    destroy_success: "Micropost deleted"
+
+  sessions:
+    create_success: "logged in as %{name}"
+
+  repost_relationships:
+    create_success: "Repost created"
+    destroy_success: "Repost deleted"
+
+---

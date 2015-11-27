@@ -1,0 +1,18 @@
+---
+ja:
+  users:
+    create_success: "ようこそ！ Microposts へ"
+    edit_success: "プロフィールは変更されました"
+
+  microposts:
+    create_success: "Micropost が作成されました"
+    destroy_success: "Micropost が削除されました"
+    
+  sessions:
+    create_success: "%{name} でログインしました"
+
+  repost_relationships:
+    create_success: "Micropost を Repost しました"
+    destroy_success: "Micropost の Repost を解除しました"
+    
+---

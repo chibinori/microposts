@@ -1,0 +1,62 @@
+---
+en:
+  header:
+    home: "Home"
+    help: "Help"
+    users: "Users"
+    account: "Account"
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Log Out"
+    login: "Log In"
+
+  static_pages:
+    greeting: "Welcome to the Microposts"
+    signup_msg: "Sign up now!"
+    post: "Post"
+    post_body: "Compose new micropost..."
+    view_profile: "view my profile"
+
+  users:
+    following_users: "Following Users"
+    followed_users: "Followed Users"
+    favorite_posts: "Favorite Posts"
+    all_users: "All Users"
+    follow: "Follow"
+    unfollow: "Unfollow"
+    edit:
+      title: "Edit User Profile"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      biography: "Biography"
+      location: "Location"
+      birthday: "Birthday"
+    new:
+      title: "Sign up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      create_account: "Create my account"
+      
+  microposts:
+    delete: "delete"
+    delete_confirm: "You sure?"
+    regist_favorite: "Regist Favorite"
+    release_favorite: "Release Favorite"
+    regist_repost: "Repost"
+    release_repost: "Release Repost"
+    posted_time_msg: "Posted %{time} ago."
+
+  sessions:
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+      is_new_user: "New user?"
+      signup_msg: "Sign up now!"
+
+---

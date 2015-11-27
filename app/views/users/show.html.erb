@@ -2,18 +2,18 @@
   <aside class="col-md-4">
     <%= render 'sidebar_user' %>
     <div class="btn-group-vertical" role="group">
-      <%= link_to "Following Users", followings_user_path(@user),
+      <%= link_to t('users.following_users'), followings_user_path(@user),
         class: "btn btn-link btn-lg"%>
-      <%= link_to "Followed Users", followers_user_path(@user),
+      <%= link_to t('users.followed_users'), followers_user_path(@user),
         class: "btn btn-link btn-lg"%>
-      <%= link_to "Favorite Posts", favoriteposts_user_path(@user),
+      <%= link_to t('users.favorite_posts'), favoriteposts_user_path(@user),
         class: "btn btn-link btn-lg"%>
     </div>
     <% #テスト用機能 %>
     <% if @user == current_user %>
       <div>
         <p></p><p></p><p></p>
-        <%= link_to "All Users", users_path,
+        <%= link_to t('users.all_users'), users_path,
           class: "btn btn-link btn-lg"%>
       </div>
     <% end %>

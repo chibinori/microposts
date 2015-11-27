@@ -2,18 +2,18 @@
   <aside class="col-md-4">
     <%= render 'sidebar_user' %>
     <div class="btn-group-vertical" role="group">
-      <%= link_to "Following Users", followings_user_path(@user),
+      <%= link_to t('users.following_users'), followings_user_path(@user),
         class: "btn btn-link btn-lg"%>
       <button type="button" class="btn btn-info btn-lg active">
-        Followed Users
+        <%= t('users.followed_users') %>
       </button>
-      <%= link_to "Favorite Posts", favoriteposts_user_path(@user),
+      <%= link_to t('users.favorite_posts'), favoriteposts_user_path(@user),
         class: "btn btn-link btn-lg"%>
     </div>
   </aside>
   <% if logged_in? %>
     <div class="col-md-8">
-      <h3>Followed Users (<%= @followed_users.count %>)</h3>
+      <h3><%= t('users.followed_users') %> (<%= @followed_users.count %>)</h3>
       <% if @followed_users.any? %>
         <%= render partial: 'relational_users',
           locals: { relational_users: @followed_users } %>

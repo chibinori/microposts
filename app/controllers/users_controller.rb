@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = t('users.create_success')
       redirect_to @user
     else
       render 'new'
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     # DBのパスワードダイジェスト情報が空になることはない
     if @user.update(user_params)
       # 保存に成功した場合はユーザ画面へリダイレクト
-      flash[:success] = "Success to edit profile!"
+      flash[:success] = t('users.edit_success')
       redirect_to @user
     else
       # 保存に失敗した場合は編集画面へ戻す

@@ -1,0 +1,63 @@
+---
+ja:
+  header:
+    home: "ホーム"
+    help: "ヘルプ"
+    users: "ユーザ"
+    account: "アカウント"
+    profile: "プロフィール"
+    settings: "設定"
+    logout: "ログアウト"
+    login: "ログイン"
+  
+  static_pages:
+    greeting: "ようこそ！ Microposts へ"
+    signup_msg: "今すぐサインアップ"
+    post: "Post"
+    post_body: "内容を記載してください"
+    view_profile: "プロフィールを見る"
+
+  users:
+    following_users: "フォロー"
+    followed_users: "フォロワー"
+    favorite_posts: "お気に入り"
+    all_users: "全ユーザ"
+    follow: "フォロー"
+    unfollow: "アンフォロー"
+    edit:
+      title: "プロフィール 編集"
+      name: "名前"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirmation: "パスワード確認"
+      biography: "自己紹介"
+      location: "場所"
+      birthday: "誕生日"
+    new:
+      title: "サインアップ"
+      name: "名前"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirmation: "パスワード確認"
+      create_account: "アカウントを作成"
+    
+  microposts:
+    delete: "削除"
+    delete_confirm: "削除してもよろしいですか？"
+    regist_favorite: "お気に入り 登録"
+    release_favorite: "お気に入り 解除"
+    regist_repost: "Repost"
+    release_repost: "Repost 解除"
+    posted_time_msg: "%{time}前に投稿されました"
+  
+  sessions:
+    new:
+      title: "ログイン"
+      email: "メールアドレス"
+      password: "パスワード"
+      login: "ログイン"
+      is_new_user: "アカウントを持っていない方はこちら"
+      signup_msg: "今すぐサインアップ"
+
+    
+---

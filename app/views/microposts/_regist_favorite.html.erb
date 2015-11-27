@@ -1,4 +1,4 @@
 <%= form_for(current_user.favoritepost_relationships.build, remote: true) do |f| %>
   <div><%= hidden_field_tag :micropost_id, regist_favorite.id %></div>
-  <%= f.submit "Regist Favorite", class: "btn btn-primary" %>
+  <%= f.submit t('microposts.regist_favorite'), class: "btn btn-primary" %>
 <% end %>

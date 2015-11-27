@@ -1,8 +1,8 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :content, placeholder: t('static_pages.post_body') %>
     <%= f.file_field :postimage %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.submit t('static_pages.post'), class: "btn btn-primary" %>
 <% end %>
