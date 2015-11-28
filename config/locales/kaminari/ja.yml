@@ -13,7 +13,7 @@ ja:
         display_entries:
           zero: "%{entry_name} は見つかりません"
           one: "%{entry_name} を <b>1 件</b>、表示しています"
-          other: "{entry_name} <b>全 %{count} 件</b> を表示しています"
+          other: "%{entry_name} <b>全 %{count} 件</b> を表示しています"
       more_pages:
         display_entries: " %{entry_name} を<b>全 %{total} 件</b>中、 <b>%{first}</b>件目から<b>%{last}</b>件目まで表示しています"
 ---

@@ -216,13 +216,18 @@ span.picture {
 
 // 生年月日の年月日の入力ボックスを縦に並べず横に並べる.
 #user_birthday_1i {
-  width: 70px;
+  width: 80px;
 }
 
 #user_birthday_2i {
-  width: 50px;
+  width: 60px;
 }
 
 #user_birthday_3i {
-  width: 50px;
+  width: 60px;
+}
+
+.bootstrap-date {
+  display: inline-block;
+  width: auto;
 }

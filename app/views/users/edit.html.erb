@@ -16,38 +16,39 @@
       <div class="form-group">
         <%= f.label :email, t('.email'), class: "col-md-2 control-label" %>
         <div class="col-md-6">
-          <%= f.text_field :email %>
+          <%= f.text_field :email, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :password, t('.password'), class: "col-md-2 control-label" %>
         <div class="col-md-6">
-          <%= f.password_field :password %>
+          <%= f.password_field :password, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :password_confirmation,
           t('.password_confirmation'), class: "col-md-2 control-label" %>
         <div class="col-md-6">
-          <%= f.password_field :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :biography, t('.biography'), class: "col-md-2 control-label" %>
         <div class="col-md-10">
-          <%= f.text_field :biography %>
+          <%= f.text_field :biography, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :location, t('.location'), class: "col-md-2 control-label" %>
         <div class="col-md-10">
-          <%= f.text_field :location %>
+          <%= f.text_field :location, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label :birthday, t('.birthday'), class: "col-md-2 control-label" %>
         <div class="col-md-10">
-          <%= f.date_select :birthday, start_year: 1900, include_blank: true %>
+          <%= f.date_select :birthday, { start_year: 1900, include_blank: true },
+            { class: "form-control bootstrap-date" } %>
         </div>
       </div>
       <div class="form-group">
